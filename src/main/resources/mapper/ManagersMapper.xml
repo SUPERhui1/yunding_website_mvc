@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.yunding.website.mapper.ManagerMapper">
+
+    <!--查询管理员和密码进行登录-->
+    <select id="findByManagerName" resultType="cn.yunding.website.entity.Manager" parameterType="java.lang.String">
+     select * from w_manager where manager_name=#{managerName}
+</select>
+
+</mapper>

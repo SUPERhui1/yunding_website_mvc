@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CKEditor Classic Editing Sample</title>
+    <!-- Make sure the path to CKEditor is correct. -->
+    <script type="text/javascript" src="ckeditor.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+</head>
+<body>
+<form method="post">
+
+    <p>
+        My Editor:<br>
+        <textarea name="editor1" id="editor1">&lt;p&gt;Initial editor content.&lt;/p&gt;</textarea>
+        <script type="text/javascript">
+            var editor=CKEDITOR.replace( 'editor1' );
+        </script>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
+</body>
+</html>

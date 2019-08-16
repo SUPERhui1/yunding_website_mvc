@@ -1,0 +1,107 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.yunding.website.mapper.ArticleMapper">
+
+    <!--查询文章总数-->
+    <select id="getArticleNum" resultType="Integer">
+        select count(*) from w_article where article_state=1
+    </select>
+    <!--通过下标获取文章类-->
+    <select id="getArticle"  resultType="cn.yunding.website.entity.Article">
+        select article_id,article_image,article_category_id,article_introduce,
+               article_praise,article_views,article_sender,article_updated_at
+               from w_article where article_state=1 order by article_updated_at desc
+               limit #{beginIndex},#{number}
+    </select>
+    <!--获得指定文章的总数-->
+    <select id="getArticleNumCat"  resultType="Integer">
+        select count(*) from w_article where
+        article_category_id=#{articleCategoryId} and article_state=1
+    </select>
+    <!--通过下标获取指定类型的文章类-->
+    <select id="getArticleCat"  resultType="cn.yunding.website.entity.Article">
+        select article_id,article_image,article_category_id,article_introduce,
+               article_praise,article_views,article_sender,article_updated_at
+               from w_article where article_category_id=#{articleCategoryId}
+               and article_state=1 order by article_updated_at desc
+               limit #{beginIndex},#{number}
+    </select>
+    <!--通过下标获取文章，并按浏览量排列-->
+    <select id="getArticleByHot" resultType="cn.yunding.website.entity.Article">
+        select article_id,article_image,article_category_id,article_introduce,
+               article_praise,article_views,article_sender,article_updated_at
+               from w_article where article_state=1 order by article_views desc,
+               article_updated_at desc limit #{beginIndex},#{number}
+    </select>
+    <!--通过下标获取指定文章，并按浏览量排列-->
+    <select id="getCatArticleByHot" resultType="cn.yunding.website.entity.Article">
+        select article_id,article_image,article_category_id,article_introduce,
+               article_praise,article_views,article_sender,article_updated_at
+               from w_article where article_category_id=#{articleCategoryId}
+               and article_state=1 order by article_views  desc,article_updated_at desc
+               limit #{beginIndex},#{number}
+    </select>
+    <!--通过文章id删除文章(将文章的状态变为0)-->
+    <update id="deleteArticleById" >
+        update  w_article set article_state = 0 where
+        article_id = #{articleId} and article_state=1
+    </update>
+    <!--上传文章-->
+    <insert id="updateArticle" parameterType="cn.yunding.website.entity.Article">
+        insert  into w_article
+        (
+        article_state, article_content, article_image,
+        article_category_id, article_introduce, article_praise,
+        article_views, article_sender, article_created_at,
+        article_updated_at
+        ) values
+        (
+        1,#{articleContent},#{articleImage},
+        #{articleCategoryId},#{articleIntroduce},#{articlePraise},
+        #{articleViews},#{articleSender},#{articleCreatedAt},
+        #{articleUpdatedAt}
+        )
+    </insert>
+    <!--通过id修改文章-->
+    <update id="changeArticle" parameterType="cn.yunding.website.entity.Article">
+        update w_article
+        <set>
+            <if test="articleState!=null">article_state=#{articleState},</if>
+            <if test="articleContent!=null">article_content=#{articleContent},</if>
+            <if test="articleImage!=null">article_image=#{articleImage},</if>
+            <if test="articleCategoryId!=null">article_category_id=#{articleCategoryId},</if>
+            <if test="articleIntroduce!=null">article_introduce=#{articleIntroduce},</if>
+            <if test="articlePraise!=null">article_praise=#{articlePraise},</if>
+            <if test="articleViews!=null">article_views=#{articleViews},</if>
+            <if test="articleSender!=null">article_sender=#{articleSender},</if>
+            <if test="articleCreatedAt!=null">article_created_at=#{articleCreatedAt},</if>
+            <if test="articleUpdatedAt!=null">article_updated_at=#{articleUpdatedAt}</if>
+        </set>
+        where article_id=#{articleId}
+    </update>
+    <!--通过id获取文章-->
+    <select id="getArticleById" resultType="cn.yunding.website.entity.Article">
+        select * from w_article where article_id=#{articleId}
+    </select>
+    <!--通过标题获取模糊文章-->
+    <select id="getArticleByIntroduce" resultType="cn.yunding.website.entity.Article">
+        select article_id,article_introduce from w_article where article_introduce LIKE "%"#{articleIntroduce}"%"
+    </select>
+    <!--通过id增加点赞数-->
+    <update id="upPraise" >
+        update w_article set article_praise=article_praise+1 where article_id=#{articleId}
+    </update>
+    <!--通过id增加浏览量-->
+    <update id="upViews">
+        update w_article set article_views=article_views+1 where  article_id=#{articleId}
+    </update>
+    <!--通过id减少点赞数-->
+    <update id="downPraise">
+        update w_article set article_praise=article_praise-1 where article_id=#{articleId}
+    </update>
+    <delete id="deleteArticle" parameterType="Integer">
+        delete w_article where article_id=#{articleId}
+    </delete>
+</mapper>

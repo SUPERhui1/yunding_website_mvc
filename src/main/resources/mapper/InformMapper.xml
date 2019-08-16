@@ -1,0 +1,48 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.yunding.website.mapper.InformMapper">
+    <!--上传消息通知-->
+    <insert id="saveInform"
+            useGeneratedKeys="true"
+            keyProperty="informId"
+            keyColumn="inform_id"
+            parameterType="cn.yunding.website.entity.Inform"
+    >
+         insert into w_inform(
+          inform_state,
+          inform_content,
+          inform_created_at,
+          inform_updated_at
+         ) value(
+          #{informState},
+          #{informContent},
+          #{informCreatedAt},
+          #{informUpdatedAt}
+
+        )
+    </insert>
+
+    <!--分页查询新闻-->
+    <!--查询news总数-->
+    <select id="getInformSum" resultType="Integer">
+        select COUNT(*) from w_inform where inform_state=1;
+    </select>
+
+    <!--获取指定页的文章列表-->
+    <select id="getInformByPageNum" resultType="cn.yunding.website.entity.Inform">
+        SELECT * FROM w_inform where inform_state =1  LIMIT #{beginIndex},#{limit}
+    </select>
+
+    <update id="deleteInform" parameterType="cn.yunding.website.entity.Inform">
+        update w_inform
+        set inform_state=0
+        where inform_id=#{informId}
+    </update>
+
+    <select id="selectInformById" parameterType="Integer" resultType="cn.yunding.website.entity.Inform">
+        SELECT * FROM w_inform where inform_state =1 and inform_id=#{informId};
+    </select>
+
+</mapper>

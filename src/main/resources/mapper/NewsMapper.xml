@@ -1,0 +1,95 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.yunding.website.mapper.NewsMapper">
+<!--通过place查看是否有news-->
+    <select id="checkNewsByPlace"
+            parameterType="cn.yunding.website.entity.News"
+            resultType="cn.yunding.website.entity.News">
+        select * from w_news where news_place =#{newsPlace}
+    </select>
+
+<!--上传新闻-->
+    <insert id="insertNews"
+            useGeneratedKeys="true"
+            keyProperty="newsId"
+            keyColumn="news_id"
+            parameterType="cn.yunding.website.entity.News" >
+         insert into w_news(
+        news_title,
+        news_content,
+        news_image,
+        news_place,
+        news_introduce,
+        news_sender,
+        news_created_at,
+        news_updated_at
+         )value(
+        #{newsTitle},
+        #{newsContent},
+        #{newsImage},
+        #{newsPlace},
+        #{newsIntroduce},
+        #{newsSender},
+        #{newsCreatedAt},
+        #{newsUpdatedAt}
+        )
+    </insert>
+
+<!--更新新闻-->
+    <update id="updateNews" parameterType="cn.yunding.website.entity.News">
+        update  `w_news`
+        <set>
+            <if test="newsTitle!= null" > news_title=#{newsTitle}, </if>
+            <if test="newsState!= null" > news_state=#{newsState}, </if>
+            <if test="newsContent!= null"> news_content=#{newsContent}, </if>
+            <if test="newsImage!= null"> news_image=#{newsImage},</if>
+            <if test="newsPlace!= null"> news_place=#{newsPlace},</if>
+            <if test="newsIntroduce!= null"> news_introduce=#{newsIntroduce},</if>
+            <if test="newsSender!= null"> news_sender=#{newsSender},</if>
+            <if test="newsUpdatedAt!= null"> news_updated_at=#{newsUpdatedAt},</if>
+        </set>
+        where
+        news_id=#{newsId}
+
+    </update>
+
+<!--查询news-->
+    <select id="selectNews"
+            parameterType="cn.yunding.website.entity.News"
+            resultType="cn.yunding.website.entity.News">
+        select * from w_news where news_state=1;
+    </select>
+
+<!--查询newsById-->
+    <select id="selectNewsById"
+            parameterType="cn.yunding.website.entity.News"
+            resultType="cn.yunding.website.entity.News">
+        select * from w_news where news_id=#{newsId} and news_state=1;
+    </select>
+
+<!--分页查询新闻-->
+    <!--查询news总数-->
+    <select id="getNewsSum" resultType="Integer">
+        select COUNT(*) from w_news where news_state=1;
+    </select>
+
+    <!--获取指定页的news列表-->
+    <select id="getNewsByPageNum" resultType="cn.yunding.website.entity.News">
+        SELECT news_id,news_title,news_place,news_updated_at FROM w_news where news_state=1 order by news_place DESC LIMIT #{beginIndex},#{limit};
+    </select>
+
+    <select id="selectPlaceNews" resultType="cn.yunding.website.entity.News">
+        SELECT news_id,news_title,news_image,news_place,news_introduce FROM w_news
+          WHERE news_place >0  and news_state=1  ORDER BY news_place ;
+    </select>
+
+    <select id="selectNewsByPlace" resultType="cn.yunding.website.entity.News">
+        SELECT * FROM w_news WHERE news_state=1 and news_place=#{newsPlace} ;
+    </select>
+
+    <delete id="deleteNews" parameterType="cn.yunding.website.entity.News">
+        update w_news set news_state=0 where news_id=#{newsId};
+    </delete>
+</mapper>

@@ -1,0 +1,147 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.yunding.website.mapper.MemberMapper">
+    <!-- 上传新成员 -->
+    <insert useGeneratedKeys="true"
+            keyProperty="memberId"
+            keyColumn="member_id"
+            id="insert"
+            parameterType="cn.yunding.website.entity.Member">
+        insert into
+        `w_member`(
+           `member_name`,
+           `member_photo`,
+           `member_grade`,
+           `member_position`,
+           `member_achievement`,
+           `member_joined_at`,
+           `member_created_at`,
+           `member_updated_at`
+           ) values (
+            #{memberName},
+            #{memberPhoto},
+            #{memberGrade},
+            #{memberPosition},
+            #{memberAchievement},
+            #{memberJoinedAt},
+            #{memberCreatedAt},
+            #{memberUpdatedAt}
+           )
+    </insert>
+
+    <!-- 删除成员 -->
+    <delete id="delete"
+            parameterType="cn.yunding.website.entity.Member" >
+        UPDATE w_member <set>
+        <if test="memberUpdatedAt!=null">member_updated_at = #{memberUpdatedAt},</if>
+        <if test="memberState!=null">member_state = #{memberState},</if>
+    </set>
+        WHERE member_id = #{memberId}
+    </delete>
+
+    <!-- 更新成员信息 -->
+    <update id="update"
+            parameterType="cn.yunding.website.entity.Member">
+        update w_member <set>
+        <if test="memberName!=null">member_name = #{memberName},</if>
+        <if test="memberPhoto!=null">member_photo = #{memberPhoto},</if>
+        <if test="memberGrade!=null">member_grade = #{memberGrade},</if>
+        <if test="memberPosition!=null"> member_position = #{memberPosition},</if>
+        <if test="memberAchievement!=null"> member_achievement = #{memberAchievement},</if>
+        <if test="memberJoinedAt!=null"> member_joined_at = #{memberJoinedAt},</if>
+        <if test="memberUpdatedAt!=null"> member_updated_at = #{memberUpdatedAt},</if>
+    </set>
+        where member_id = #{memberId}
+    </update>
+    
+    <!-- 获取全部大咖(成员状态>0) -->
+    <select id="selectGreatPerson"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT member_id,member_name,member_position,member_state,member_photo FROM w_member WHERE member_state > 0 ORDER BY member_state;
+    </select>
+
+    <!-- 根据成员状态获取成员信息 -->
+    <select id="selectPerson"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT * FROM w_member WHERE member_state = #{memberState};
+    </select>
+
+
+    <!-- 获取全部成员 -->
+    <select id="selectAll"
+            parameterType="cn.yunding.website.entity.Member"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT * FROM w_member;
+    </select>
+
+    <!-- 根据姓名搜索成员 -->
+    <select id="selectByName"
+            parameterType="java.lang.String"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT * FROM w_member WHERE member_name = #{memberName};
+    </select>
+
+    <!-- 根据成员Id获取成员 -->
+    <select id="selectById"
+            parameterType="java.lang.Integer"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT * FROM w_member WHERE member_id = #{memberId};
+    </select>
+
+
+    <!-- 通过Id获得成员状态 -->
+    <select id="selectState"
+            parameterType="java.lang.Integer"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT member_state FROM w_member WHERE member_id = #{memberId};
+    </select>
+
+    <!-- 通过成员Id将大咖的状态更改为0 -->
+    <update id="updateGreatState"
+            parameterType="cn.yunding.website.entity.Member">
+        UPDATE w_member <set>
+        <if test="memberState!=null">member_state = #{memberState},</if>
+    </set>
+        WHERE member_id = #{memberId}
+    </update>
+
+    <!-- 通过Id更改成员状态为(1～6) -->
+    <update id="updateGreatState1"
+            parameterType="cn.yunding.website.entity.Member" >
+        UPDATE w_member <set>
+        <if test="memberState!=null">member_state = #{memberState},</if>
+    </set>
+        WHERE member_id = #{memberId}
+    </update>
+
+    <!-- 通过状态查找id -->
+    <select id="selectId"
+            parameterType="java.lang.Integer"
+            resultType="cn.yunding.website.entity.Member">
+        SELECT member_id FROM w_member WHERE member_state= #{memberState};
+    </select>
+    <!--根据成员姓名模糊搜索成员-->
+    <select id="getMemberInformationByName"  resultType="cn.yunding.website.entity.Member">
+        SELECT *FROM w_member WHERE member_name LIKE "%"#{memberName}"%"
+    </select>
+    <!--分页查询成员-->
+    <select id="getMember" resultType="cn.yunding.website.entity.Member">
+        select * from w_member order by member_state desc limit #{beginIndex},#{number};
+    </select>
+    <!--查询成员总数-->
+    <select id="getMemberNum" resultType="Integer">
+        select count(*) from w_member;
+    </select>
+    <!--通过多个id获取多个成员信息-->
+    <select id="selectUserByIds" resultType="cn.yunding.website.entity.Member"
+                                 parameterType="java.util.List">
+        select * from w_member where member_id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+        #{item}
+        </foreach>
+    </select>
+
+
+</mapper>

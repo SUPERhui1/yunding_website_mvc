@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>云顶官网</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/yunding.js"></script>
+
+
+</head>
+<body>
+	<div class="container" >
+<!-- header部分 -->
+		<div class="header_box"> 
+			<div class="header_blur"></div>
+           <div class="nav">
+        	<!-- 导航栏 -->
+        	<div class="logo">
+        		<img src="pic/logo.png" class="logo_pic" />	
+        	</div>
+        	<div  class="nav_itemsbox">
+        	<ul class="nav_itemsbox_ul">
+        		<li class="nav_itemsbox_lis">
+        			<a href="#" class="nav_items" >首页</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="#article" class="nav_items" onclick="">文章动态</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="#production" class="nav_items">产品体验</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="#techsavvy" class="nav_items">技术大咖</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="#aboutus" class="nav_items">关于我们</a>
+        		</li>
+        	</ul>
+        	</div>
+        	<div  class="nav_joinus">
+        	<a class="nav_joinus_a" href="#joinus">加入我们</a>
+            </div>
+        	</div>
+           </div>
+
+
+
+
+
+
+              <!-- session1部分 -->
+
+<div class="session1_box">
+	<div class="session1_box_content">
+              <div class="session1_slider">
+				  <a href="http://localhost:8080/yunding/news.html">
+
+				  </a>
+
+              </div>
+	</div>
+	<div class="session1_dots">
+		<span class="session1_dot" id="dot0"></span>
+		<span class="session1_dot" id="dot1"></span>
+		<span class="session1_dot" id="dot2"></span>
+		<span class="session1_dot" id="dot3"></span>
+	</div>
+
+</div>
+
+
+
+        <!-- session2部分 -->
+        <div class="session2_box">
+        	<div class="session2_box_center" >
+        		<div class="session2_box_center_box">
+        		<img src="pic/pic_office1.png" class="session2_box_center_img" onclick="session2_float(src)" id="officeImg"></div>
+        		<div class="session2_box_center_box">
+        		<img src="pic/pic_office2.png" class="session2_box_center_img" onclick="session2_float(src)" id="officeImg"></div>
+        		<div class="session2_box_center_box">
+        		<img src="pic/pic_office3.png" class="session2_box_center_img" onclick="session2_float(src)" id="officeImg"></div>
+        		<div class="session2_box_center_box">
+        		<img src="pic/pic_office4.png" class="session2_box_center_img" onclick="session2_float(src)" id="officeImg"></div>
+        	</div>
+			<div class="session_box_clear"></div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- session3部分 -->
+        <div class="session3_box">
+        	<div class="session3_box_center">
+        		<div class="session3_inform">
+        			<div class="session3_inform_title">
+        				<p class="session3_inform_title_p">通知</p>
+        				<p class="session3_inform_title_p">公告</p>
+        			</div>
+        			<img src="pic/pic_inform.png" class="session3_inform_pic">
+
+        		</div>
+        		<div class="session3_words">
+        			<p class="session3_words_p">"云顶书院宣讲会于9月12日晚19:00在大数据学院9层召开，欢迎同学前来参加"</p>
+        		</div>
+                <div class="session3_dots">
+                    <span class="session3_dot" ></span>
+                    <span class="session3_dot" ></span>
+                    <span class="session3_dot" ></span>
+                    <span class="session3_dot" ></span>
+                </div>
+        	</div>
+        </div>
+
+
+
+
+
+        <!-- session4部分 -->
+                	<a href="" name="article"></a>
+        <div class="session4_box">
+
+        	<div class="session4_box_center">
+        		<div class="session4_header">
+        			<div class="session4_header_title">
+        				<p>文章动态</p>
+        			</div>
+        			<div class="session4_header_catalogue">
+        				<ul class="session4_header_catalogue_ul">
+        					<li><a id="session4_header_catalogue_a0" class="session4_header_catalogue_a" onclick="getByArticleCategoryId(null,this.id)">全部</a></li>
+        					<li>/</li>
+        					<li><a id="session4_header_catalogue_a1" class="session4_header_catalogue_a" onclick="getByArticleCategoryId(1,this.id)">教程</a></li>
+        					<li>/</li>
+        					<li><a id="session4_header_catalogue_a2" class="session4_header_catalogue_a" onclick="getByArticleCategoryId(2,this.id)">文章</a></li>
+        					<li>/</li>
+        					<li><a id="session4_header_catalogue_a3" class="session4_header_catalogue_a" onclick="getByArticleCategoryId(3,this.id)">观点</a></li>
+        					<li>/</li>
+        					<li><a id="session4_header_catalogue_a4" class="session4_header_catalogue_a" onclick="getByArticleCategoryId(4,this.id)">咨询</a></li>
+        					<li>/</li>
+        					<li><a id="session4_header_catalogue_a5" class="session4_header_catalogue_a" onclick="getByArticleCategoryId(5,this.id)">作品</a></li>
+        				</ul> 
+        			</div>
+        			<div class="session4_header_sortord">
+        				<ul>
+        					<li class="session4_header_sortord_a" id="session4_header_sortord_a1" onclick="getByHotOrTime(null,this.id)">时间</li>
+        					<li>
+        					/
+        					</li>
+        					<li class="session4_header_sortord_a" id="session4_header_sortord_a2" onclick="getByHotOrTime('hot',this.id)">人气</li>
+        				</ul>
+        			</div>
+        		</div>
+        		<div class="session4_content">
+
+        		   <div class="session4_content_article_boxes">
+        									<div class="session4_content_article_box1">
+        										<p>教程</p>
+        										<img src="pic/se1.png" class="session4_content_article_box1_img">
+        									</div>
+        									<div class="session4_content_article_box2">
+        										<p class="session4_content_article_box2_p1">如何优雅的上报前端监控日志</p>
+        										<p class="session4_content_article_box2_p2">18-07-12</p>
+        										
+        									</div>
+        									<div class="session4_content_article_box3">
+        										<div class="session4_content_article_box3_admin">
+        											<img src="pic/pic_admin.png" alt="">
+                                                     <span>段启岩</span>
+        									
+        										</div>
+        										<div class="session4_content_article_box3_icons">
+        										<div class="session4_content_article_box3_icon1">
+        											<i class="iconfont icon-view"></i>
+        											<p>124</p>
+        										</div>
+        										<div class="session4_content_article_box3_icon2">
+        											<i class="iconfont icon-like
+        											"></i>
+        											<p>23</p>
+        										</div>
+        				                        </div>
+        									</div>
+        		    </div>
+        			<div class="session4_content_article_boxes">
+        													<div class="session4_content_article_box1">
+        														<p>教程</p>
+        														<img src="./pic/se2.png">
+        													</div>
+        													<div class="session4_content_article_box2">
+        														<p class="session4_content_article_box2_p1">如何优雅的上报前端监控日志</p>
+        														<p class="session4_content_article_box2_p2">18-07-12</p>
+        														
+        													</div>
+        													<div class="session4_content_article_box3">
+        														<div class="session4_content_article_box3_admin">
+        															<img src="pic/pic_admin.png" alt="">
+        															<span>段启岩</span>
+        														</div>
+        														<div class="session4_content_article_box3_icons">
+        														<div class="session4_content_article_box3_icon1">
+        															<i class="iconfont icon-view"></i>
+        															<p>124</p>
+        														</div>
+        														<div class="session4_content_article_box3_icon2">
+        															<i class="iconfont icon-like
+        															"></i>
+        															<p>23</p>
+        														</div>
+        								                        </div>
+        													</div>
+        			 </div>
+        			 <div class="session4_content_article_boxes">
+        																	<div class="session4_content_article_box1">
+        																		<p>教程</p>
+        																		<img src="./pic/se3.png">
+        																	</div>
+        																	<div class="session4_content_article_box2">
+        																		<p class="session4_content_article_box2_p1">如何优雅的上报前端监控日志</p>
+        																		<p class="session4_content_article_box2_p2">18-07-12</p>
+        																		
+        																	</div>
+        																	<div class="session4_content_article_box3">
+        																		<div class="session4_content_article_box3_admin">
+        																			<img src="pic/pic_admin.png" alt="">
+                                                                    <span>段启岩</span>
+        																			
+        																		</div>
+        																		<div class="session4_content_article_box3_icons">
+        																		<div class="session4_content_article_box3_icon1">
+        																			<i class="iconfont icon-view"></i>
+        																			<p>124</p>
+        																		</div>
+        																		<div class="session4_content_article_box3_icon2">
+        																			<i class="iconfont icon-like
+        																			"></i>
+        																			<p>23</p>
+        																		</div>
+        												                        </div>
+        																	</div>
+        			 </div>
+            			
+
+        		    <div class="session4_content_article_boxes">
+        									<div class="session4_content_article_box1">
+        										<p>教程</p>
+        										<img src="./pic/se4.png">
+        									</div>
+        									<div class="session4_content_article_box2">
+        										<p class="session4_content_article_box2_p1">如何优雅的上报前端监控日志</p>
+        										<p class="session4_content_article_box2_p2">18-07-12</p>
+        										
+        									</div>
+        									<div class="session4_content_article_box3">
+        										<div class="session4_content_article_box3_admin">
+        											<img src="pic/pic_admin.png" alt="">
+                                                                    <span>段启岩</span>
+        											
+        										</div>
+        										<div class="session4_content_article_box3_icons">
+        										<div class="session4_content_article_box3_icon1">
+        											<i class="iconfont icon-view"></i>
+        											<p>124</p>
+        										</div>
+        										<div class="session4_content_article_box3_icon2">
+        											<i class="iconfont icon-like
+        											"></i>
+        											<p>23</p>
+        										</div>
+        				                        </div>
+        									</div>
+        		    </div>
+        			<div class="session4_content_article_boxes">
+        													<div class="session4_content_article_box1">
+        														<p>教程</p>
+        														<img src="./pic/se5.png">
+        													</div>
+        													<div class="session4_content_article_box2">
+        														<p class="session4_content_article_box2_p1">如何优雅的上报前端监控日志</p>
+        														<p class="session4_content_article_box2_p2">18-07-12</p>
+        														
+        													</div>
+        													<div class="session4_content_article_box3">
+        														<div class="session4_content_article_box3_admin">
+        															<img src="pic/pic_admin.png" alt="">
+                                                                    <span>段启岩</span>
+        															
+        														</div>
+        														<div class="session4_content_article_box3_icons">
+        														<div class="session4_content_article_box3_icon1">
+        															<i class="iconfont icon-view"></i>
+        															<p>124</p>
+        														</div>
+        														<div class="session4_content_article_box3_icon2">
+        															<i class="iconfont icon-like
+        															"></i>
+        															<p>23</p>
+        														</div>
+        								                        </div>
+        													</div>
+        			 </div>
+        			 <div class="session4_content_article_boxes">
+        																	<div class="session4_content_article_box1">
+        																		<p>教程</p>
+        																		<img src="./pic/se6.png">
+        																	</div>
+        																	<div class="session4_content_article_box2">
+        																		<p class="session4_content_article_box2_p1">如何优雅的上报前端监控日志</p>
+        																		<p class="session4_content_article_box2_p2">18-07-12</p>
+        																		
+        																	</div>
+        																	<div class="session4_content_article_box3">
+        																		<div class="session4_content_article_box3_admin">
+        																			<img src="pic/pic_admin.png" alt="">
+                                                                    <span>段启岩</span>
+        																			
+        																		</div>
+        																		<div class="session4_content_article_box3_icons">
+        																		<div class="session4_content_article_box3_icon1">
+        																			<i class="iconfont icon-view"></i>
+        																			<p>124</p>
+        																		</div>
+        																		<div class="session4_content_article_box3_icon2">
+        																			<i class="iconfont icon-like
+        																			"></i>
+        																			<p>23</p>
+        																		</div>
+        												                        </div>
+        																	</div>
+        			 </div>
+        		</div>
+				<div class="session_box_clear"></div>
+        		<div class="session4_arrows">
+        			<a onclick="getByPage1()"><div class="session_arrows_box" id="session4_arrow1">
+        				<div class="hexagon_box1"></div>
+        				<div class="hexagon_box2">
+        					<i class="iconfont icon-left-arrow"></i>
+        				</div>
+        				<div class="hexagon_box3"></div>
+        			</div></a>
+        			<a onclick="getByPage2()"><div class="session_arrows_box" id="session4_arrow2">
+        				<div class="hexagon_box1"></div>
+        				<div class="hexagon_box2">
+        					<i class="iconfont icon-right-arrow"></i>
+        				</div>
+        				<div class="hexagon_box3"></div>
+        			</div></a>
+        		</div>
+        	</div>
+
+        </div>
+
+
+		<!-- session5部分 -->
+        <a href="" name="production"></a>
+
+
+        <div class="session5_box">
+        	<div class="session5_box_center">
+        		<div class="session5_header">
+        			<div class="session5_header_title">
+        				<p>产品体验</p>
+        			</div>
+        			<div class="session5_header_arrows">
+        				<div class="session_arrows_box" onclick="session5getbyPage1()" id="session5_arrow1">
+        					<div class="hexagon_box1"></div>
+        					<div class="hexagon_box2">
+        						<i class="iconfont icon-left-arrow"></i>
+        					</div>
+        					<div class="hexagon_box3"></div>
+        				</div>
+        				<div class="session_arrows_box" onclick="session5getbyPage2()" id="session5_arrow2">
+        					<div class="hexagon_box1"></div>
+        					<div class="hexagon_box2">
+        						<i class="iconfont icon-right-arrow"></i>
+        					</div>
+        					<div class="hexagon_box3"></div>
+        				</div>
+        			</div>
+
+        	     </div>
+
+
+
+
+        	     <div class="session5_content">
+        	     	<div class="session5_content_boxes">
+        	     		<img src="pic/pic_cloud.png" class="session5_content_boxes_img1">
+        	     		<p class="session5_content_boxes_title1">云顶社交</p>
+        	     		<p class="session5_content_boxes_title2">云顶书院内部团队的社交软件</p>
+        	     		<img src="pic/pic_screen.png" class="session5_content_boxes_img2">
+
+        	     	</div>
+        	     	<div class="session5_content_boxes">
+        	     		<img src="pic/pic_cloud.png" class="session5_content_boxes_img1">
+        	     		<p class="session5_content_boxes_title1">1331工程</p>
+        	     		<p class="session5_content_boxes_title2">大数据可视化的数据展示平台</p>
+        	     		<img src="pic/pic_screen.png" class="session5_content_boxes_img2">
+
+        	     	</div>
+        	     	<div class="session5_content_boxes">
+        	     		<img src="pic/pic_cloud.png" class="session5_content_boxes_img1">
+        	     		<p class="session5_content_boxes_title1">青春支部</p>
+        	     		<p class="session5_content_boxes_title2">全国高校支部风采展示活动平台</p>
+        	     		<img src="pic/pic_screen.png" class="session5_content_boxes_img2">
+
+        	     	</div>
+        	     	<div class="session5_content_boxes">
+        	     		<img src="pic/pic_cloud.png" class="session5_content_boxes_img1">
+        	     		<p class="session5_content_boxes_title1">云顶社交</p>
+        	     		<p class="session5_content_boxes_title2">云顶书院内部团队的社交软件</p>
+        	     		<img src="pic/pic_screen.png" class="session5_content_boxes_img2">
+
+        	     	</div>
+        	     </div>
+        	</div>
+        	<div class="session_box_clear"></div>
+        </div>
+
+
+
+
+
+
+<!-- session6部分 -->
+        <a href="" name="techsavvy"></a>
+        <div class="session6_box">
+        	<div class="session6_box_center">
+        		<div class="session6_header">
+        			<p class="session6_header_title">
+        				技术大咖
+        			</p>
+        		</div>
+        		<div class="session6_content">
+        			<div class="session6_content_boxes">
+        				<img src="pic/Meteor.jpg">
+        				<p class="session6_content_boxes_title1">段启岩</p>
+        				<p class="session6_content_boxes_title2">技术总监</p>
+        			</div>
+        			<div class="session6_content_boxes">
+        				<img src="pic/Meteor.jpg">
+        				<p class="session6_content_boxes_title1">段启岩</p>
+        				<p class="session6_content_boxes_title2">技术总监</p>
+        			</div>
+        			<div class="session6_content_boxes">
+        				<img src="pic/Meteor.jpg">
+        				<p class="session6_content_boxes_title1">段启岩</p>
+        				<p class="session6_content_boxes_title2">技术总监</p>
+        			</div>
+        			<div class="session6_content_boxes">
+        				<img src="pic/Meteor.jpg">
+        				<p class="session6_content_boxes_title1">段启岩</p>
+        				<p class="session6_content_boxes_title2">技术总监</p>
+        			</div>
+        			<div class="session6_content_boxes">
+        				<img src="pic/Meteor.jpg">
+        				<p class="session6_content_boxes_title1">段启岩</p>
+        				<p class="session6_content_boxes_title2">技术总监</p>
+        			</div>
+        			<div class="session6_content_boxes">
+        				<img src="pic/Meteor.jpg">
+        				<p class="session6_content_boxes_title1">段启岩</p>
+        				<p class="session6_content_boxes_title2">技术总监</p>
+        			</div>
+
+        		</div>
+        	</div>
+        </div>
+
+
+
+
+
+
+
+        <!-- session7部分 -->
+        <a href="" name="aboutus"></a>
+        <div class="session7_box">
+        	<div class="session7_box_center">
+        		<div class="session7_head">
+        			<div class="session7_head_triangle1"></div>
+        			<div class="session7_head_triangle2"></div>
+					<p class="session7_head_p1">云顶院</p>
+					<p class="session7_head_p2">云顶院简介</p>
+        		</div><div class="session7_bottom1">
+				<div class="session_arrows_box session7_arrows_box1" onclick="session7Show()">
+					<div class="hexagon_box1"></div>
+					<div class="hexagon_box2">
+						<i class="iconfont icon-left-arrow"></i>
+					</div>
+					<div class="hexagon_box3"></div>
+				</div>
+				<div class="session_arrows_box session7_arrows_box2" onclick="session7Show()">
+					<div class="hexagon_box1"></div>
+					<div class="hexagon_box2">
+						<i class="iconfont icon-right-arrow"></i>
+					</div>
+					<div class="hexagon_box3"></div>
+				</div>
+        			<div class="session7_bottom_img">
+        				<img src="pic/pic_about.png" alt="" >
+        			</div>
+        			<div class="session7_bottom_wordsBox">
+        				<p class="session7_bottom_word1">创客团</p>
+        				<p class="session7_bottom_word2">Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程</p>
+        			</div>
+        		</div>
+				<div class="session7_bottom2">
+					<div class="session_arrows_box session7_arrows_box1" onclick="session7Show()">
+						<div class="hexagon_box1"></div>
+						<div class="hexagon_box2">
+							<i class="iconfont icon-left-arrow"></i>
+						</div>
+						<div class="hexagon_box3"></div>
+					</div>
+					<div class="session_arrows_box session7_arrows_box2" onclick="session7Show()">
+						<div class="hexagon_box1"></div>
+						<div class="hexagon_box2">
+							<i class="iconfont icon-right-arrow"></i>
+						</div>
+						<div class="hexagon_box3"></div>
+					</div>
+					<div class="session7_bottom_img">
+						<img src="pic/pic_about.png" alt="" >
+					</div>
+					<div class="session7_bottom_wordsBox">
+						<p class="session7_bottom_word1">极客团</p>
+						<p class="session7_bottom_word2">Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程</p>
+					</div>
+				</div>
+        	</div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- session8部分 -->
+        <a href="" name="joinus"></a>
+        <div class="session8_box">
+        	<div class="session8_box_center">
+        	<p class="session8_box_word1">加入我们</p>
+        	<p class="session8_box_word2">我们崇尚专注热爱的事业，更加尊重自由奔放的个性。在这里，我们以一种体现自我价值的态度存在。等文案等文案等文案等文案
+等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案等文案</p>
+             <div class="session8_box_box">
+             	<div class="session8_box_detail">
+             		<div class="session8_box_detailBox">
+             		<p class="session8_box_detail_p1">设计</p>
+						<p class="session8_box_detail_p2">查看方向详情</p>
+             	    </div>
+             	</div>
+             	<div class="session8_box_detail">
+             		<div class="session8_box_detailBox">
+             		<p class="session8_box_detail_p1">数据可视化</p>
+						<p class="session8_box_detail_p2">查看方向详情</p>
+             		</div>
+             	</div>
+             	<div class="session8_box_detail">
+             		<div class="session8_box_detailBox">
+             		<p class="session8_box_detail_p1">前端</p>
+						<p class="session8_box_detail_p2">查看方向详情</p>
+             		</div>
+
+             	</div>
+             	<div class="session8_box_detail">
+             		<div class="session8_box_detailBox">
+             		<p class="session8_box_detail_p1">后台</p>
+						<p class="session8_box_detail_p2">查看方向详情</p>
+             		</div>
+             	</div>
+             </div>
+            </div>
+			<div class="session_box_clear"></div>
+        </div>
+
+
+
+
+        <!-- session9部分 -->
+        <div class="session9_box">
+        	<div class="session9_box_center">
+        		<div class="session9_img">
+        			<img src="pic/pic_wechat.png" alt="">
+        		</div>
+        		<p class="session9_word">Copyright © 2016-2018 云顶书院 All right reserved. </p>
+        	</div>
+        </div>
+	</div>
+	 </div>
+
+<!-- 照片弹出层 -->
+
+    <div id="fade" class="black_overlay" onclick="CloseDiv('floatDiv','fade')">
+
+    </div>
+	<div class="black_overlay_back" onclick="CloseDiv('floatDiv','fade')">
+		<img  style="height:40px;width:40px;" src="pic/close.png">
+	</div>
+     <div id="floatDiv" class="white_content" >
+
+     </div>
+<!-- news弹出层 -->
+     <div id="fade2" class="black_overlay" onclick="CloseDiv('floatDiv2','fade2')">
+     </div>
+	 <div id="floatDiv2" class="white_content2" >
+       
+	 </div>	
+
+
+<!--      文章弹出层 -->
+     <div id="fade3" class="black_overlay" onclick="CloseDiv('floatDiv3','fade3')">
+     </div>
+     <div id="floatDiv3" class="white_content3" >
+       
+     </div> 
+</body>
+</html>

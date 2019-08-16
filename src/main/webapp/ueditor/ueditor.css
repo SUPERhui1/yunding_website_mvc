@@ -1,0 +1,50 @@
+
+body{
+    background: #a9d1e4;
+}
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    background-color: #fff;
+}
+
+.topdiv{
+    margin-bottom:20px;
+    position: relative;
+    background-color:#5f5f5f;
+}
+.topdiv h1{
+    display:inline-block;
+    margin-left:500px;
+    padding:20px 30px;
+    color:#fff;
+}
+.topdiv img{
+    left:50px;
+    padding:20px 30px;
+    vertical-align: middle;
+}
+.middlediv{
+    padding-top:20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.bottomdiv{
+    width: 1200px;
+    margin:40px auto;
+    padding-bottom:40px;
+    text-align: center;
+}
+
+.euploadBtn{
+    color:#fff;
+    background-color: #2D64B3;
+    height:50px;
+    width:100px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border:none;
+}

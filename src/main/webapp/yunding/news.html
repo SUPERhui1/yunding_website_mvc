@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>云顶官网</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/yunding.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/news.css">
+
+</head>
+<body>
+<script>
+	window.onload=function () {
+	    let url=window.location.search;
+		let id=url.substr(url.lastIndexOf("=")+1);
+        session1_onload(id);
+    }
+</script>
+	<div class="container" >
+
+
+
+
+
+
+
+
+<!-- header部分 -->
+		<div class="header_box"> 
+			<div class="header_blur"></div>
+           <div class="nav">
+        	<!-- 导航栏 -->
+        	<div class="logo">
+        		<img src="pic/logo.png" class="logo_pic" />	
+        	</div>
+        	<div  class="nav_itemsbox">
+        	<ul class="nav_itemsbox_ul">
+        		<li class="nav_itemsbox_lis">
+        			<a href="http://localhost:8080/yunding" class="nav_items" >首页</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="http://localhost:8080/yunding/#news.html" class="nav_items" onclick="">文章动态</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="http://localhost:8080/yunding/#production" class="nav_items">产品体验</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="http://localhost:8080/yunding/#techsavvy" class="nav_items">技术大咖</a>
+        		</li>
+        		<li class="nav_itemsbox_lis">
+        			<a href="http://localhost:8080/yunding/#aboutus" class="nav_items">关于我们</a>
+        		</li>
+        	</ul>
+        	</div>
+        	<div  class="nav_joinus">
+        	<a class="nav_joinus_a" href="http://localhost:8080/yunding/#joinus">加入我们</a>
+            </div>
+        	</div>
+           </div>
+
+
+
+           <!-- 文章部分 -->
+
+           <div class="article" id="article">
+                      <p class="article_title">如何优雅的上传前端监控日志</p>
+                      <div class="article_author">
+                          <img src="./pic/pic_admin.png">
+                          <span style="margin-left: 10px">段启岩</span>
+                          <span style="margin-left: 40px;color:#288dbc">教程</span>
+                          <span style="margin-left: 35px">18-08-08</span>
+                      </div>
+                      <div class="article_icons">
+                          <i class="iconfont icon-view" style="font-size:25px;vertical-align:middle"></i>
+                          <span style="margin-left: 10px">5</span>
+                          <i class="iconfont icon-like" style="margin-left: 30px"></i>
+                          <span  style="margin-left: 10px">34</span>
+
+                      </div>
+                      <div id="article_content" class="article_content">　　</div>
+                   </div>
+
+</div>
+</body>
+</html>

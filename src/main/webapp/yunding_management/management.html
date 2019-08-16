@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>云顶</title>
+    <link rel="stylesheet" href="../yunding/css/style.css" >
+	<link rel="stylesheet" href="management.css">
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="management.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="manageheader">
+			<img src="logo.png" class="mangeheader_logo">
+			<h1 class="mangeheader_h1">云顶官网后台管理页面</h1>
+		</div>
+		<div class="manageleft">
+
+			<button class="manageleft_items" onclick="fetchnews(1)"><span>新闻</span></button>
+			<button class="manageleft_items" onclick="fetchinform(1)"><span>通知</span></button>
+			<button class="manageleft_items" onclick="fetcharticle(1)"><span>文章</span></button>
+			<button class="manageleft_items" onclick="fetchwork(1)"><span>作品</span></button>
+			<button class="manageleft_items" onclick="fetchmember(1)"><span>成员</span></button>
+			<div class="manageleft_p_father">
+				<p class="manageleft_p">上传</p>
+                <img src="arrow.png" class="manageleft_img">
+			</div>
+			<div class="manageleft_upload">
+				<ul>
+					<li class="manageleft_upload_item"><input value="新闻上传" type="button" onclick="window.location='../ueditor/news.html'" class="manageleft_upload_item_input"/></li>
+					<li class="manageleft_upload_item"><input value="通知上传" type="button" onclick="window.location='../ueditor/inform.html'" class="manageleft_upload_item_input"/></li>
+					<li class="manageleft_upload_item"><input value="文章上传" type="button" onclick="window.location='../ueditor/article.html'" class="manageleft_upload_item_input"/></li>
+					<li class="manageleft_upload_item"><input value="作品上传" type="button" onclick="window.location='../ueditor/work.html'" class="manageleft_upload_item_input"/></li>
+					<li class="manageleft_upload_item"><input value="成员上传" type="button" onclick="window.location='../ueditor/member.html'" class="manageleft_upload_item_input"/></li>
+				</ul>
+			</ul>
+
+
+
+		   </div>
+		</div>
+		<div class="manageright">
+
+		<div class="manageright_centext">
+
+			</div>
+			<div class="manageright_bottom">
+				<div class="manageright_bottom_items">
+				<button onclick="newsPrePage()">上一页</button>
+				<button onclick="newsNextPage()" style="margin-right: 600px;">下一页</button>
+				<span id="pageIndex">第一页</span><span>/</span><span id="pageSum">第  页</span>
+				</div>
+			</div>
+
+		</div>
+    </div>
+</body>
+</html>
